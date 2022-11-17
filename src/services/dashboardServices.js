@@ -31,6 +31,21 @@ export const saveTour = (data) => {
     });
   return res;
 };
+export const unSaveTour = (data) => {
+  const res = axios
+    .put(`${apiPort}/unsave-tour`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => {
+      return err.response;
+    });
+  return res;
+};
 export const saveds = () => {
   const res = axios
     .get(`${apiPort}/saveds`, {

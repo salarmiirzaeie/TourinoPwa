@@ -9,6 +9,8 @@ import {
   cil4k,
   cilSave,
 } from "@coreui/icons";
+import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
+
 import CIcon from "@coreui/icons-react";
 import {
   CCardHeader,
@@ -18,15 +20,15 @@ import {
 } from "@coreui/react";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { isSaved, saveTour } from "../services/dashboardServices";
+import { isSaved, saveTour, unSaveTour } from "../services/dashboardServices";
 
 const DetHeader = (pos) => {
   const navigate = useNavigate();
   const params = useParams();
-  const[saved,setsaved]=useState(false)
+  const [saved, setsaved] = useState(false);
   useEffect(() => {
-    isSaved({postId:params.id}).then((res) => {
-      setsaved(res.data)
+    isSaved({ postId: params.id }).then((res) => {
+      setsaved(res.data);
     });
   });
   return (
@@ -44,16 +46,32 @@ const DetHeader = (pos) => {
       // position={pos.pos}
     >
       <div>
-        <CIcon
-          onClick={() => {
-            saveTour({ postId: params.id }).then((res) => {
-              alert(res.data.message);
-            });
-          }}
-          size="xl"
-          className={"bg-warning"}
-          icon={saved?cilSave:cilBookmark}
-        />
+        {saved ? (
+          <BsBookmarkFill
+            onClick={() => {
+
+              unSaveTour({ postId: params.id }).then((res) => {
+              });
+              setsaved(false);
+
+            }}
+            size="25px"
+            className="mb-3"
+          />
+        ) : (
+          <BsBookmark
+            onClick={() => {
+
+              saveTour({ postId: params.id }).then((res) => {
+              });
+              setsaved(true);
+
+            }}
+            className="mb-3"
+            size="25px"
+          />
+        )}
+
         <CIcon size="xl" icon={cilOptions} />
       </div>
       {!pos.pos.mode ? <CHeaderText>{pos.pos.title}</CHeaderText> : ""}

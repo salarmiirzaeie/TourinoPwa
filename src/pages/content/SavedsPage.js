@@ -20,7 +20,13 @@ import { saveds } from '../../services/dashboardServices';
           <TourCard data={post} key={i}/>
           
 
-        )):<CSpinner/>}
+        )):<div className='h-100 w-100'>
+        <p style={{justifyContent:'center',textAlign:"center"}}>
+          No Data
+
+        </p>
+        
+        </div>}
 
     </div>
     </>
