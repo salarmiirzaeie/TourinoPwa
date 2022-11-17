@@ -6,7 +6,7 @@ import Index from "../pages/content/Index";
 const AppContent = () => {
   return (
     <div>
-      <Suspense fallback={<CSpinner color="primary" />}>
+      <Suspense fallback={<CSpinner  color="success" />}>
         <Routes>
           {routes.map((route, idx) => {
                   return (

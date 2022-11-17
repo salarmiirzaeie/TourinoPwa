@@ -24,3 +24,18 @@ $enable-rtl: true;
 body {
     font-family: "BYekan" !important;
 }
+.testimonial-group > .row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .testimonial-group > .row > .col-xs-4 {
+    flex: 0 0 auto;
+  }
+  
+  .btn-skyblue{
+    background-color: skyblue;
+  }
+  .btn-skyblue:hover{
+    background-color: blue;
+  }

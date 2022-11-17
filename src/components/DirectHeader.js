@@ -1,10 +1,10 @@
-import { cilAlarm, cilBadge, cilBell, cilSend } from "@coreui/icons";
+import { cilArrowLeft, cilArrowRight, cilPlus, cilSend } from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 import { CHeader, CHeaderText } from "@coreui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const DirectHeader = () => {
   const navigate=useNavigate()
   return (
     <CHeader
@@ -17,9 +17,11 @@ const Header = () => {
       }}
       // position={pos.pos}
     >
-      <CIcon onClick={()=>navigate('/Direct')} size="xl" icon={cilBell} />
-      <CHeaderText className="text-white">Tourino</CHeaderText>
+      <CIcon onClick={()=>navigate('/')} size="xl" icon={cilPlus} />
+      <CIcon onClick={()=>navigate('-1')} size="xl" icon={cilArrowLeft} />
+
+
     </CHeader>
   );
 };
-export default Header;
+export default DirectHeader;

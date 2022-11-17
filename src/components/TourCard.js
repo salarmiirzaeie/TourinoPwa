@@ -13,9 +13,9 @@ export const TourCard = (data) => {
   const Height = window.innerHeight;
 const navigate=useNavigate()
   return (
-    <CCard  onClick={() => navigate(`/TourDet/${data.data._id}`)} style={{ height: Height / 5.5 }}>
-      <CRow className="p-1 d-flex flex-fill">
-        <CCol className="d-flex flex-column" xs={7} md={7} xl={7}>
+    <CCard  onClick={() => navigate(`/TourDet/${data.data._id}`)} style={{ height: Height / 5.5,zIndex:1 }}>
+      <div className=" d-flex flex-fill">
+        <CCol className="d-flex flex-column p-1" xs={7} md={7} xl={7}>
           <CCardText style={{flex:0.6}} className="">{data.data.title}</CCardText>
 
           <CCardText style={{flex:0.35}} className="">dd</CCardText>
@@ -24,8 +24,7 @@ const navigate=useNavigate()
           </CCardText>
         </CCol>
         <CCol
-          style={{ paddingRight: "0px" }}
-          className="d-flex flex-column"
+          className="d-flex flex-column p-1"
           xs={5}
           md={5}
           xl={5}
@@ -40,7 +39,7 @@ const navigate=useNavigate()
             <CSpinner />
           )}
         </CCol>
-      </CRow>
+      </div>
     </CCard>
   );
 };

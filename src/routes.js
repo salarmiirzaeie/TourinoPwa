@@ -5,7 +5,11 @@ const Index=React.lazy(()=>import('./pages/content/Index'))
 const Profile=React.lazy(()=>import('./pages/content/Profile'))
 const Categories=React.lazy(()=>import('./pages/content/Categories'))
 const Explore=React.lazy(()=>import('./pages/content/Explore'))
-const TourDet=React.lazy(()=>import('./pages/content/TourDet'))
+const SearchPage=React.lazy(()=>import('./pages/content/SearchPage'))
+const Setting=React.lazy(()=>import('./pages/content/Setting'))
+const CampProfile=React.lazy(()=>import('./pages/content/CampProfile'))
+const SavedsPage=React.lazy(()=>import('./pages/content/SavedsPage'))
+
 
 
 const routes = [
@@ -14,7 +18,10 @@ const routes = [
    { path: '/profile', exact: true,name: 'profile', element: Profile },
    { path: '/Categories', exact: true,name: 'Categories', element: Categories },
    { path: '/Explore', exact: true,name: 'Explore', element: Explore },
-   { path: '/TourDet/:id', exact: true,name: 'TourDet', element: TourDet },
+   { path: '/SearchPage', exact: true,name: 'SearchPage', element: SearchPage },
+   { path: '/Setting', exact: true,name: 'Setting', element: Setting },
+   { path: '/CampProfile/:id', exact: true,name: 'CampProfile', element: CampProfile },
+   { path: '/SavedsPage', exact: true,name: 'SavedsPage', element: SavedsPage },
 
 
 ]

@@ -1,17 +1,100 @@
-import { CCard } from "@coreui/react";
+import {
+  cilAirplaneMode,
+  cilBusAlt,
+  cilLibraryBuilding,
+  cilSearch,
+  cilTerrain,
+} from "@coreui/icons";
+import CIcon from "@coreui/icons-react";
+import {
+  CCard,
+  CCardBody,
+  CCardText,
+  CCol,
+  CFormInput,
+  CInputGroup,
+  CInputGroupText,
+  CRow,
+} from "@coreui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Category } from "../../components/Category";
 import Header from "../../components/Header";
 import Popular from "../../components/Popular";
+import PopularCompanies from "../../components/PopularCompanies";
 
 const Index = () => {
+  const Height = window.innerHeight;
+const navigate=useNavigate()
   return (
-    <div className="wrapper d-flex flex-column min-vh-100 bg-light">
+    <div>
       <Header />
-      <div className="body flex-grow-1">
-        <CCard className="bg-white px-1">
+      <CCard
+        style={{
+          height: Height / 4,
+          backgroundColor: "skyblue",
+          justifyContent: "center",
+        }}
+      >
+        <CInputGroup
+          style={{
+            width: "85%",
+            alignSelf: "center",
+            borderBlockColor: "white",
+          }}
+          className="mt-3"
+        >
+          <CFormInput
+            style={{ borderLeftColor: "white" }}
+            placeholder="جستجو..."
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            onFocus={()=>navigate('/SearchPage')}
+          />
+          <CInputGroupText
+            style={{ borderRightColor: "white" }}
+            className="bg-white"
+          >
+            <CIcon icon={cilSearch} />
+          </CInputGroupText>
+        </CInputGroup>
+      </CCard>
+      <CCard
+        style={{
+          backgroundColor: "#ffffff",
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          marginTop: -20,
+        }}
+      >
+        <CCardBody>
+          <Category />
+        </CCardBody>
+        <CCardBody className="pt-0">
+          <CCardText className="text-dark">محبوبترین تورها</CCardText>
           <Popular />
-        </CCard>
-      </div>
+        </CCardBody>
+        <CCardBody className="pt-0">
+        <CCardText className="text-dark">محبوبترین کمپ ها</CCardText>
+
+          <PopularCompanies />
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+          <p>dd</p>
+
+        </CCardBody>
+      </CCard>
     </div>
   );
 };

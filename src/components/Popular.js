@@ -1,31 +1,43 @@
-import { CCard, CCol, CRow } from "@coreui/react";
+import {  CCardImage } from "@coreui/react";
 import React from "react";
 
 const Popular = () => {
+  const Height = window.innerHeight;
+  const width = window.innerWidth;
+
   return (
-    <div className="row" style={{ height: "300px", overflowX: "auto",whiteSpace:"nowrap" }}>
-      <div className="bg-info col-3">ds</div>
-      <div className="bg-info col-3">ds</div>
-      <div className="bg-info col-3">ds</div>
-      <div className="bg-info col-3">ds</div>
-      <div className="bg-info col-3">ds</div>
-
-
+    <div className="testimonial-group">
+      <div className="row">
+        
+        <div className="col-xs-4" style={{ height: Height / 3.5,width:width/1.8}}>
+          <CCardImage
+            className="d-block h-100"
+            src={`http://localhost:3333/uploads/thumbnails/0SJd1RMcX_7IUDGemhl_Beleave.jpg`}
+          />
+        </div>
+        <div className="col-xs-4" style={{ height: Height / 3.5,width:width/1.8}}>
+          <CCardImage
+            className="d-block h-100"
+            src={`http://localhost:3333/uploads/thumbnails/0SJd1RMcX_7IUDGemhl_Beleave.jpg`}
+          />
+        </div>
+        <div className="col-xs-4" style={{ height: Height / 3.5,width:width/1.8}}>
+          <CCardImage
+            className="d-block h-100"
+            src={`http://localhost:3333/uploads/thumbnails/0SJd1RMcX_7IUDGemhl_Beleave.jpg`}
+          />
+        </div>
+        <div className="col-xs-4" style={{ height: Height / 3.5,width:width/1.8}}>
+          <CCardImage
+            className="d-block h-100"
+            src={`http://localhost:3333/uploads/thumbnails/0SJd1RMcX_7IUDGemhl_Beleave.jpg`}
+          />
+        </div>
+       
+        
+      </div>
     </div>
-    // <CCard className="bg-warning" style={{ height: "200px" }}>
-    //    <CRow className="flex-fill  testimonial-group">
-    //     <CCol className="bg-info">
-    //         cs
-    //     </CCol>
-    //     <CCol>
-    //         cs
-    //     </CCol>
-    //     <CCol className="bg-info">
-    //         cs
-    //     </CCol>
-    //    </CRow>
-
-    // </CCard>
+   
   );
 };
 export default Popular;
