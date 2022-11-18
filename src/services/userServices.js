@@ -44,7 +44,22 @@ export const editProfile = (data) => {
   const res = axios
     .post(`${apiPort}/edit-profile`, data, {
       headers: {
-        'content-type': 'multipart/form-data',
+        // 'content-type': 'multipart/form-data',
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      return response
+    })
+    .catch((err) => {
+      return err.response
+    })
+  return res
+}
+export const userProfile = () => {
+  const res = axios
+    .get(`${apiPort}/profile`, {
+      headers: {
         Authorization: `Bearer ${token}`,
       },
     })

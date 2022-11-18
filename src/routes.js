@@ -9,6 +9,8 @@ const SearchPage=React.lazy(()=>import('./pages/content/SearchPage'))
 const Setting=React.lazy(()=>import('./pages/content/Setting'))
 const CampProfile=React.lazy(()=>import('./pages/content/CampProfile'))
 const SavedsPage=React.lazy(()=>import('./pages/content/SavedsPage'))
+const joinedTours=React.lazy(()=>import('./pages/content/JoinedTours'))
+
 
 
 
@@ -22,6 +24,8 @@ const routes = [
    { path: '/Setting', exact: true,name: 'Setting', element: Setting },
    { path: '/CampProfile/:id', exact: true,name: 'CampProfile', element: CampProfile },
    { path: '/SavedsPage', exact: true,name: 'SavedsPage', element: SavedsPage },
+   { path: '/joinedTours', exact: true,name: 'joinedTours', element: joinedTours },
+
 
 
 ]

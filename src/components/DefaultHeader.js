@@ -20,7 +20,7 @@ const DefaultHeader = (name) => {
       {/* <CIcon onClick={()=>navigate('/')} size="xl" icon={cilPlus} /> */}
       <p style={{opacity:0}}>{'2'}</p>
       <CHeaderText className="text-white">{name.name}</CHeaderText>
-      <CIcon onClick={()=>navigate('-1')} size="xl" icon={cilArrowLeft} />
+      <CIcon onClick={()=>navigate(-1)} size="xl" icon={cilArrowLeft} />
 
 
     </CHeader>

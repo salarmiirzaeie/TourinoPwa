@@ -8,6 +8,9 @@ import {
   cilArrowLeft,
   cil4k,
   cilSave,
+  cilShare,
+  cilShareAll,
+  cilShareAlt,
 } from "@coreui/icons";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 
@@ -46,6 +49,8 @@ const DetHeader = (pos) => {
       // position={pos.pos}
     >
       <div>
+      <CIcon size="xl" icon={cilShareAlt} />
+
         {saved ? (
           <BsBookmarkFill
             onClick={() => {
@@ -72,7 +77,6 @@ const DetHeader = (pos) => {
           />
         )}
 
-        <CIcon size="xl" icon={cilOptions} />
       </div>
       {!pos.pos.mode ? <CHeaderText>{pos.pos.title}</CHeaderText> : ""}
       <CIcon onClick={() => navigate(-1)} size="xl" icon={cilArrowLeft} />

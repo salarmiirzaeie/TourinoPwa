@@ -30,12 +30,12 @@ import { useNavigate } from "react-router-dom";
 import { profile } from "../state-management/action/profileAction";
 import { profileMode } from "../state-management/action/profileModeAction";
 
-const ProfileHeader = () => {
+const ProfileHeader = ({setedit}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
     <CHeader
-      className={"bg-transparent text-white d-flex p-2 w-100 position-absolute"}
+      className={"bg-transparent text-white d-flex p-2 w-100 position-fixed"}
       style={{
         justifyContent: "space-between",
         zIndex: 10,
@@ -53,14 +53,14 @@ const ProfileHeader = () => {
         </CDropdownToggle>
         <CDropdownMenu>
           <CDropdownItem>
-            <CIcon className='me-1' icon={cilPencil} />
+            <CIcon onClick={()=>setedit(true)} className='me-1' icon={cilPencil} />
             ویرایش پروفایل
           </CDropdownItem>
           <CDropdownItem href="/#/SavedsPage">
             <CIcon className='me-1' icon={cilBookmark} />
             تورهای ذخیره شده
           </CDropdownItem>
-          <CDropdownItem>
+          <CDropdownItem href="/#/joinedTours">
             <CIcon className='me-1' icon={cilBusAlt} />
             تورهای من
           </CDropdownItem>

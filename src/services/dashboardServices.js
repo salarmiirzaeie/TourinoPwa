@@ -61,10 +61,40 @@ export const saveds = () => {
     });
   return res;
 };
+export const joineds = () => {
+  const res = axios
+    .get(`${apiPort}/joineds`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => {
+      return err.response;
+    });
+  return res;
+};
 
 export const isSaved = (data) => {
   const res = axios
     .post(`${apiPort}/is-saved`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => {
+      return err.response;
+    });
+  return res;
+};
+export const isJoined = (data) => {
+  const res = axios
+    .post(`${apiPort}/is-joined`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
