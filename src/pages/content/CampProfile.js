@@ -29,16 +29,16 @@ import DefaultHeader from "../../components/DefaultHeader";
 import { getUser } from "../../services/postServices";
 
 const CampProfile = () => {
-  const params=useParams()
+  const params = useParams();
   const Height = window.innerHeight;
   const [vis1, setvis1] = useState(true);
   const [pos, setposition] = useState(false);
-  const[camp,setcamp]=useState({})
+  const [camp, setcamp] = useState({});
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
-    getUser(params.id).then((res)=>{
-      setcamp(res.data)
-    })
+    getUser(params.id).then((res) => {
+      setcamp(res.data);
+    });
   }, []);
   const listenScrollEvent = () => {
     if (window.scrollY <= Height / 5) {
@@ -49,7 +49,7 @@ const CampProfile = () => {
   };
   return (
     <div>
-      <DefaultHeader name={pos?camp.name:""} />
+      <DefaultHeader name={pos ? camp.name : ""} />
       <CCard
         style={{
           height: Height / 3,
@@ -95,7 +95,7 @@ const CampProfile = () => {
           borderBottomRightRadius: 10,
           marginTop: pos ? -Height / 4 : 0,
           position: pos ? "fixed" : "initial",
-          zIndex:5
+          zIndex: 5,
         }}
         className={"w-100"}
         layout="fill"
@@ -138,10 +138,9 @@ const CampProfile = () => {
           id="pills-home"
           role="tabpanel"
           aria-labelledby="pills-home-tab"
-          style={{alignItems:"center"}}
+          style={{ alignItems: "center" }}
         >
-          <CampGallery/>
-
+          <CampGallery />
         </div>
         <div
           className={!vis1 ? "tab-pane fade show active" : "tab-pane fade"}
@@ -149,10 +148,9 @@ const CampProfile = () => {
           role="tabpanel"
           aria-labelledby="pills-profile-tab"
         >
-          <CampTours/>
+          <CampTours />
         </div>
       </div>
-      
     </div>
   );
 };

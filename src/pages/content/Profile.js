@@ -26,14 +26,14 @@ const Profile = () => {
 
   const navigate = useNavigate();
   useEffect(() => {
-    userProfile().then((res) => {
-      // console.log(res.data);
-      if (res.status===200) {
-        setProfile(res.data);
-
-      }
-    });
-  });
+    if (logedin) {
+      userProfile().then((res) => {
+        if (res.status === 200) {
+          setProfile(res.data);
+        }
+      });
+    }
+  }, []);
   if (logedin) {
     return (
       <div>
@@ -62,12 +62,10 @@ const Profile = () => {
               return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
-              console.log(values)
+              console.log(values);
               editProfile(values).then((res) => {
                 setTimeout(async () => {
-                  console.log(res.data)
                   if (res.status === 200) {
-                    
                     navigate(0);
                   } else {
                     alert("خطا", res.data.message, "error");
@@ -179,13 +177,20 @@ const Profile = () => {
                     </div>
                     <div
                       className="d-flex pt-2"
-                      style={{ justifyContent: "space-between",
-                      
-                     }}
+                      style={{ justifyContent: "space-between" }}
                     >
-                      <CButton onClick={()=>setEditMode(false)} className="btn w-50 btn-danger">لغو</CButton>
-                      <CButton onClick={handleSubmit} className="btn  btn-skyblue border-0  w-50">ثبت</CButton>
-
+                      <CButton
+                        onClick={() => setEditMode(false)}
+                        className="btn w-50 btn-danger"
+                      >
+                        لغو
+                      </CButton>
+                      <CButton
+                        onClick={handleSubmit}
+                        className="btn  btn-skyblue border-0  w-50"
+                      >
+                        ثبت
+                      </CButton>
                     </div>
                   </CCardBody>
                 </CCard>
@@ -247,10 +252,7 @@ const Profile = () => {
               <hr />
               <div className="p-2" style={{ height: "150px" }}>
                 <CCardText className="text-dark">درباره</CCardText>
-                <p >
-                {profile.description}
-
-                </p>
+                <p>{profile.description}</p>
 
                 {/* <CCardText>نام</CCardText> */}
               </div>

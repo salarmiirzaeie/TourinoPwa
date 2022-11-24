@@ -16,6 +16,21 @@ export const joinTour = (data) => {
     });
   return res;
 };
+export const unjoinTour = (data) => {
+  const res = axios
+    .put(`${apiPort}/unjoin-tour`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => {
+      return err.response;
+    });
+  return res;
+};
 export const saveTour = (data) => {
   const res = axios
     .put(`${apiPort}/save-tour`, data, {

@@ -8,7 +8,7 @@ const Header = () => {
   const navigate=useNavigate()
   return (
     <CHeader
-      className={" text-white d-flex px-2   w-100 position-fixed"}
+      className={" text-white d-flex px-3   w-100 position-fixed"}
       style={{
         justifyContent: "space-between",
         zIndex: 10,
@@ -17,7 +17,7 @@ const Header = () => {
       }}
       // position={pos.pos}
     >
-      <CIcon onClick={()=>navigate('/Direct')} size="xl" icon={cilBell} />
+      <CIcon onClick={()=>navigate('/Direct')} size="xl" icon={cilSend} />
       <CHeaderText className="text-white">Tourino</CHeaderText>
     </CHeader>
   );

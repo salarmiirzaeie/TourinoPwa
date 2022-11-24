@@ -24,16 +24,24 @@ import {
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { isSaved, saveTour, unSaveTour } from "../services/dashboardServices";
+import { useSelector } from "react-redux";
 
 const DetHeader = (pos) => {
+  const logedin = useSelector((state) => state.profileModeState);
   const navigate = useNavigate();
   const params = useParams();
   const [saved, setsaved] = useState(false);
   useEffect(() => {
-    isSaved({ postId: params.id }).then((res) => {
-      setsaved(res.data);
-    });
-  });
+    if (logedin) {
+      isSaved({ postId: params.id }).then((res) => {
+        if (res.status===200) {
+          setsaved(res.data);
+  
+        }
+      });
+    }
+   
+  },[saved]);
   return (
     <CHeader
       className={
@@ -56,8 +64,12 @@ const DetHeader = (pos) => {
             onClick={() => {
 
               unSaveTour({ postId: params.id }).then((res) => {
+                if (res.status) {
+                  setsaved(false);
+
+                }
+
               });
-              setsaved(false);
 
             }}
             size="25px"
@@ -68,8 +80,12 @@ const DetHeader = (pos) => {
             onClick={() => {
 
               saveTour({ postId: params.id }).then((res) => {
+                if (res.status===200) {
+                  setsaved(true);
+
+                }
+
               });
-              setsaved(true);
 
             }}
             className="mb-3"
@@ -78,7 +94,7 @@ const DetHeader = (pos) => {
         )}
 
       </div>
-      {!pos.pos.mode ? <CHeaderText>{pos.pos.title}</CHeaderText> : ""}
+      {!pos.pos.mode ? <CHeaderText>{pos.title}</CHeaderText> : ""}
       <CIcon onClick={() => navigate(-1)} size="xl" icon={cilArrowLeft} />
     </CHeader>
   );

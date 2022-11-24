@@ -1,2 +1,1 @@
-export const PROFILE="PROFILE"
 export const PROFILEMODE="PROFILEMODE"

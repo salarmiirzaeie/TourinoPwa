@@ -27,7 +27,6 @@ import {
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { profile } from "../state-management/action/profileAction";
 import { profileMode } from "../state-management/action/profileModeAction";
 
 const ProfileHeader = ({setedit}) => {
@@ -73,7 +72,7 @@ const ProfileHeader = ({setedit}) => {
             onClick={() => {
               localStorage.removeItem("token");
               dispatch(profileMode(false));
-              dispatch(profile({}));
+              navigate(0)
             }}
           >
             <CIcon icon={cilAccountLogout} className='me-1' />

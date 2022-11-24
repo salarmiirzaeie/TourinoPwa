@@ -44,6 +44,17 @@ export const getPopularCamps = () => {
     });
   return res;
 };
+export const searchTour = (data) => {
+  const res = axios
+    .post(`${apiPort}searchtour`,data)
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => {
+      return err.response;
+    });
+  return res;
+};
 export const getPost = (data) => {
   // console.log(data)
   const res = axios
@@ -51,13 +62,13 @@ export const getPost = (data) => {
     .then((response) => {
       // console.log(response.data)
 
-      return response
+      return response;
     })
     .catch((err) => {
-      return err.response
-    })
-  return res
-}
+      return err.response;
+    });
+  return res;
+};
 export const getUser = (data) => {
   // console.log(data)
   const res = axios
@@ -65,10 +76,10 @@ export const getUser = (data) => {
     .then((response) => {
       // console.log(response.data)
 
-      return response
+      return response;
     })
     .catch((err) => {
-      return err.response
-    })
-  return res
-}
+      return err.response;
+    });
+  return res;
+};

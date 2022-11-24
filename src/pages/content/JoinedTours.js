@@ -10,7 +10,6 @@ const JoinedTours = () => {
   useEffect(() => {
     joineds().then((res) => {
         if (res.status===200) {
-            console.log(res.data)
       setposts(res.data);
 
         }

@@ -20,7 +20,7 @@ const routes = [
    { path: '/profile', exact: true,name: 'profile', element: Profile },
    { path: '/Categories', exact: true,name: 'Categories', element: Categories },
    { path: '/Explore', exact: true,name: 'Explore', element: Explore },
-   { path: '/SearchPage', exact: true,name: 'SearchPage', element: SearchPage },
+   { path: '/SearchPage/:text', exact: true,name: 'SearchPage', element: SearchPage },
    { path: '/Setting', exact: true,name: 'Setting', element: Setting },
    { path: '/CampProfile/:id', exact: true,name: 'CampProfile', element: CampProfile },
    { path: '/SavedsPage', exact: true,name: 'SavedsPage', element: SavedsPage },

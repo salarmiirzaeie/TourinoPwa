@@ -19,7 +19,7 @@ export const JoinedusersSm = () => {
       <img
         className="rounded-circle"
         style={{ height: 30, width: 30, zIndex: 3 }}
-        src={`http://localhost:3333/uploads/thumbnails/0Q2DEGbZ__IpQ3lbDrz_WB - Copy.jpg`}
+        src={`http://localhost:3333/uploads/thumbnails/0SJd1RMcX_7IUDGemhl_Beleave.jpg`}
         alt="pf"
       />
     </div>

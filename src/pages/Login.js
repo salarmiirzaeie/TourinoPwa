@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 import { LoginFooter } from "../components/LoginFooter";
 import LoginHeader from "../components/LoginHeader";
 import { login } from "../services/userServices";
-import { profile } from "../state-management/action/profileAction";
 import { profileMode } from "../state-management/action/profileModeAction";
 const Login = () => {
   const Height = window.innerHeight;
@@ -46,15 +45,14 @@ const Login = () => {
               login(values).then((res) => {
                 setTimeout(async () => {
                   if (res.status === 207) {
-                    await localStorage.setItem("token", res.data.token);
-                    await dispatch(profileMode(true));
-                    await dispatch(profile(res.data));
-                    navigate("/Profile");
+                    localStorage.setItem("token", res.data.token);
+                    dispatch(profileMode(true));
+                    navigate("/profile");
                   } else {
                     alert("خطا", res.data.message, "error");
                   }
                   setSubmitting(false);
-                }, 400);
+                }, 900);
               });
             }}
           >

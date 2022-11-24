@@ -16,24 +16,18 @@ const PopularCompanies = () => {
 
   return (
     <div className="testimonial-group">
-      <div style={{height:Height/8}} className="row">
+      <div style={{ height: Height / 8 }} className="row">
         {camps.length !== 0 ? (
           camps.map((post, i) => (
-            <div               key={i}
-            className="col-3  mx-1">
-            <img 
-              onClick={() => navigate(`/CampProfile/${post.id}`)}
-              alt="s"
-              style={{
-               height:Height/9,
-               width:Height/9,
-                borderRadius: "50%",
-
-                
-              }}
-              src={`http://localhost:3333/uploads/${post.photo}`}
-            />
-            </div>
+              <img className="rounded-circle mx-0" key={i}
+                onClick={() => navigate(`/CampProfile/${post.id}`)}
+                alt="s"
+                style={{
+                  height: Height / 9,
+                  width: Height / 7,
+                }}
+                src={`http://localhost:3333/uploads/${post.photo}`}
+              />
           ))
         ) : (
           <CSpinner />

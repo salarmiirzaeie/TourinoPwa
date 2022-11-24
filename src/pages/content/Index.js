@@ -25,7 +25,7 @@ import PopularCompanies from "../../components/PopularCompanies";
 
 const Index = () => {
   const Height = window.innerHeight;
-const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
     <div>
       <Header />
@@ -42,14 +42,14 @@ const navigate=useNavigate()
             alignSelf: "center",
             borderBlockColor: "white",
           }}
-          className="mt-3"
+          className="mt-3 shadow"
         >
           <CFormInput
             style={{ borderLeftColor: "white" }}
             placeholder="جستجو..."
             aria-label="Username"
             aria-describedby="basic-addon1"
-            onFocus={()=>navigate('/SearchPage')}
+            onFocus={() => navigate("/SearchPage/b")}
           />
           <CInputGroupText
             style={{ borderRightColor: "white" }}
@@ -70,29 +70,17 @@ const navigate=useNavigate()
         <CCardBody>
           <Category />
         </CCardBody>
-        <CCardBody className="pt-0">
+        <CCardBody className="pt-0 pb-4">
           <CCardText className="text-dark">محبوبترین تورها</CCardText>
           <Popular />
         </CCardBody>
         <CCardBody className="pt-0">
-        <CCardText className="text-dark">محبوبترین کمپ ها</CCardText>
+          <CCardText className="text-dark">محبوبترین کمپ ها</CCardText>
 
           <PopularCompanies />
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
-          <p>dd</p>
 
+         
+        
         </CCardBody>
       </CCard>
     </div>
